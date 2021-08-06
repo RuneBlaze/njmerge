@@ -25,7 +25,7 @@ import dendropy
 from dendropy.calculate.treecompare import false_positives_and_negatives
 import numpy
 import os
-from string import maketrans
+# from string import maketrans
 import subprocess
 import sys
 import time
@@ -184,7 +184,7 @@ def map_splits_to_nodes(tree):
         # Not sure if this is necessary, but I re-root the trees a lot.
         # So better safe than sorry until further testing...
         bitstring1 = b.split_as_bitstring()
-        bitstring2 = bitstring1.translate(maketrans("10", "01"))
+        bitstring2 = bitstring1.translate(str.maketrans("10", "01"))
         bitmask2 = int(bitstring2, 2)
         split_to_node_map[bitmask2] = node
 
